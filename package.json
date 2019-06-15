@@ -1,0 +1,19 @@
+{
+  "name": "prospect",
+  "version": "1.0.0",
+  "description": "App developed for open data hackaton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/tchruscinski/hackaton-apka.git"
+  },
+  "author": "Tomasz Chruściński Krzysztof Brzóska Mateusz Szewczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tchruscinski/hackaton-apka/issues"
+  },
+  "homepage": "https://gitlab.com/tchruscinski/hackaton-apka#README"
+}
