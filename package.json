@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://gitlab.com/tchruscinski/hackaton-apka/issues"
   },
-  "homepage": "https://gitlab.com/tchruscinski/hackaton-apka#README"
+  "homepage": "https://gitlab.com/tchruscinski/hackaton-apka#README",
+  "dependencies": {
+    "sass": "^1.21.0"
+  }
 }

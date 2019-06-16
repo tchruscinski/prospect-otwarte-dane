@@ -1,0 +1,367 @@
+@import "variables";
+@import "mixins";
+
+
+
+@media only screen and (max-width: 1220px){
+  #logo{
+    margin-right: 45vw !important;
+  }
+  main{
+    .motto{
+      width: 35% !important;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1024px){
+  body{
+
+    nav{
+      font-size: 10px !important;
+
+      .option{
+        padding: 7px 5px 7px 0 !important;
+      }
+
+      hr{
+        margin-top: 7px !important;
+      }
+
+      .contact{
+        padding: 6px 20px !important;
+      }
+    }
+
+    #logo{
+      margin-right: 42vw !important;
+    }
+
+    main{
+      .motto{
+        margin-top: 12vh !important;
+        font-size: 26px !important;
+        width: 39.2% !important;
+      }
+
+      .animation{
+          margin-top: 13vh !important;
+          width: 80px !important;
+          height: 80px !important;
+
+          object{
+            width: 76px !important;
+            height: 76px !important;
+          }
+      }
+
+    }
+
+    footer{
+      font-size: 9px !important;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 920px){
+  body{
+    #logo{
+      margin-right: 40vw !important;
+    }
+    nav{
+      .contact{
+          padding: 6px 16px !important;
+      }
+    }
+    main{
+      .motto{
+        margin-top: 12vh !important;
+        font-size: 26px !important;
+        width: 42% !important;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 870px){
+  body{
+    #logo{
+      margin-right: 36vw !important;
+    }
+
+    main{
+      .motto{
+        font-size: 22px !important;
+      }
+      .animation{
+          margin-top: 15vh !important;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 800px){
+  body{
+    #logo{
+      margin-right: 25vw !important;
+    }
+    main{
+      .motto{
+        font-size: 20px !important;
+        width: 46% !important;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 680px){
+  body{
+    #logo{
+      margin-right: 20vw !important;
+    }
+
+    main{
+      .motto{
+        font-size: 20px !important;
+      }
+      .animation{
+          margin-top: 16vh !important;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  body{
+    #logo{
+      margin-right: 15vw !important;
+    }
+    main{
+      .motto{
+        font-size: 20px !important;
+        width: 50% !important;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 570px){
+  //THE HAMBURGER MENU ANIMATION
+  body{
+    nav{
+      #hamburger_menu{
+        display: block;
+        margin: 6vh 10vh 0 42vw;
+      }
+
+      #drawer{
+        @include prefix('transform', 'translate(300px,-530px)');
+        @include prefix('transition', 'transform 0.1s ease-in');
+        z-index: 10;
+        background-color: $bg-color;
+        width: 100%;
+        height: 530px;
+        padding: 10px;
+        flex-direction: column;
+        position: absolute;
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 14px;
+
+        .contact{
+          padding: 7px 20px !important;
+        }
+
+        #image{
+          display: block;
+          margin-bottom: 2vh;
+        }
+
+        #close{
+          display: block;
+        }
+
+        #tags{
+          display: block;
+        }
+
+        .option{
+          margin: 4vh auto;
+          width: 100px;
+        }
+      }
+    }
+    main{
+      .motto{
+        font-size: 18px !important;
+      }
+      .animation{
+          margin-top: 17vh !important;
+      }
+    }
+    footer{
+
+      .triangle{
+        width:60px;
+        height:59px;
+        top: 35px;
+      }
+
+      p {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+      }
+      p:after {
+        content:'+';
+        visibility: visible;
+        display: block;
+        position: absolute;
+        margin: -25px 0 0 4px;
+        width: 18px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 525px){
+  body{
+
+    nav{
+
+      #logo{
+        width: 170px;
+        margin: 5vh auto 0 calc(50% - 55px);
+
+        img{
+          height: 5.1vh;
+        }
+      }
+
+      #hamburger_menu{
+        margin: 6vh 10vh 0 6vh !important;
+      }
+    }
+
+    main{
+      .motto{
+        font-size: 20px !important;
+        color: $font-color;
+        margin-top: 8vh !important;
+        width: 68% !important;
+      }
+      .animation{
+          margin-top: 15vh !important;
+
+          object{
+                width: 72px !important;
+                height: 72px !important;
+          }
+      }
+
+        span{
+          display: inline-block;
+          text-align: left;
+          height: 100%;
+          width: 55%;
+          margin: 0;
+          box-sizing: border-box;
+          font-size: 12px !important;
+        }
+
+        span::before {
+            margin-right: 2vw;
+        }
+
+        span:nth-of-type(1){
+          order: 2;
+          margin-bottom: 4vh;
+        }
+
+        span:nth-of-type(2){
+          order: 4;
+          margin-bottom: 4vh;
+        }
+
+        span:nth-of-type(3){
+          order: 6;
+        }
+
+      }
+
+    footer{
+
+      .triangle{
+        width:60px;
+        height:59px;
+        top: 45px;
+      }
+      p:after {
+        margin-top: -27px;
+        font-size: 14px;
+      }
+
+    }
+  }
+}
+
+
+@media only screen and (max-width: 420px){
+  body{
+    nav{
+      #hamburger_menu{
+        margin: 6vh 10vh 0 2vh !important;
+      }
+    }
+    main{
+      .motto{
+        width: 67% !important;
+      }
+
+      .animation{
+          margin-top: 12vh !important;
+
+          object{
+                width: 66px !important;
+                height: 66px !important;
+          }
+      }
+
+    }
+  }
+}
+
+
+@media only screen and (max-width: 350px){
+  body{
+    nav{
+      #hamburger_menu{
+        margin: 6vh 10vh 0 3vh !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px){
+  body{
+    main{
+      .animation{
+        margin-top: 6vh !important;
+      }
+      .bottom{
+        margin: 3vh auto 0 !important;
+      }
+    }
+  }
+}

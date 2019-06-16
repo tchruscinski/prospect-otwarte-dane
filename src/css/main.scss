@@ -1,0 +1,182 @@
+@import "variables";
+@import "mixins";
+
+html,body{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  @include prefix('background-size', '100% 100%');
+  font-family: 'Raleway', sans-serif;
+
+  object{
+    pointer-events: none;
+  }
+
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav{
+          display: flex;
+          font-weight: 600;
+          font-size: 14px;
+          order: 1;
+          width: 100%;
+
+          #logo{
+              margin: 5vh 52vw 0 4vw;
+              order: 1;
+            img{
+              height: 8vh;
+            }
+          }
+
+          #hamburger_menu{
+            display: none;
+            order: 2;
+            min-width: 32px;
+            min-height: 22px;
+          }
+
+          #drawer{
+            order: 2;
+            display: flex;
+
+            #image{
+              display: none;
+              width: 150px;
+              margin: 20px auto 10px;
+
+              img{
+                height: 30px;
+                width: 150px;
+              }
+            }
+
+            #close{
+              display: none;
+              z-index: 10;
+              width: 22px;
+              height: 22px;
+              position: fixed;
+              right: 0;
+              margin: 20px 30px 0 0;
+            }
+
+            .option{
+              display: block;
+              text-transform: uppercase;
+              margin: 5.5vh 0 0 2vw;
+              color: $font-color;
+              order: 2;
+              padding: 8px 5px 8px 0;
+              line-height: 10px;
+              height: 10px;
+
+              hr {
+                display: none;
+                height: 0;
+                border: 0;
+                width: 50%;
+                border-bottom: 2px solid $font-color;
+                margin: 8px 0 0;
+                padding: 0;
+              }
+
+              &:hover{
+                    hr{
+                      display: block;
+                    }
+              }
+            }
+
+            .visited{
+              border-bottom: 2px solid $font-color;
+            }
+
+        }
+        .open{
+          @include prefix('transform', 'translate(0, 0) !important');
+        }
+
+      }
+
+      main{
+        order: 2;
+        width: 100%;
+
+        .animation{
+            margin: 25vh auto 0;
+            width: 400px;
+            height: 250px;
+            font-size: 35px;
+            font-weight: 800;
+            color: $font-color;
+
+            span{
+              margin: 0 auto;
+              display: block;
+              text-align: center;
+              width: 150px;
+            }
+
+            .clicked{
+              @include prefix('animation', 'spin 2s linear');
+            }
+            @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+            @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @-ms-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @-o-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @keyframes spin { 100% { -webkit-transform: rotate(360deg);} }
+
+        }
+
+      }
+
+      footer{
+        order: 3;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        font-size: 10px;
+
+        #wrapper {
+          position: fixed;
+          width: 140px;
+          height: 60px;
+          bottom: 0;
+          right: 50%;
+          margin-right: -70px;
+          overflow: hidden;
+        }
+
+        .triangle {
+          @include prefix('transform', 'rotate(45deg)');
+          background-color: $font-color;
+          color: $bg-color;
+          width:90px;
+          height:86px;
+          top: 25px;
+          position: relative;
+          border-radius: 5px;
+          margin: 0 auto;
+        }
+
+        .triangle p {
+          @include prefix('transform', 'rotate(-45deg)');
+          width: 40px;
+          padding: 8px 0 0 0;
+        }
+      }
+
+  }
+
+  //Media Queries
+
+  @import "queries";

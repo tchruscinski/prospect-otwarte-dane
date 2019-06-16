@@ -1,0 +1,443 @@
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  font-family: "Raleway", sans-serif;
+}
+body object {
+  pointer-events: none;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+body nav {
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  order: 1;
+  width: 100%;
+}
+body nav #logo {
+  margin: 5vh 52vw 0 4vw;
+  order: 1;
+}
+body nav #logo img {
+  height: 8vh;
+}
+body nav #hamburger_menu {
+  display: none;
+  order: 2;
+  min-width: 32px;
+  min-height: 22px;
+}
+body nav #drawer {
+  order: 2;
+  display: flex;
+}
+body nav #drawer #image {
+  display: none;
+  width: 150px;
+  margin: 20px auto 10px;
+}
+body nav #drawer #image img {
+  height: 30px;
+  width: 150px;
+}
+body nav #drawer #close {
+  display: none;
+  z-index: 10;
+  width: 22px;
+  height: 22px;
+  position: fixed;
+  right: 0;
+  margin: 20px 30px 0 0;
+}
+body nav #drawer .option {
+  display: block;
+  text-transform: uppercase;
+  margin: 5.5vh 0 0 2vw;
+  color: #5dd95d;
+  order: 2;
+  padding: 8px 5px 8px 0;
+  line-height: 10px;
+  height: 10px;
+}
+body nav #drawer .option hr {
+  display: none;
+  height: 0;
+  border: 0;
+  width: 50%;
+  border-bottom: 2px solid #5dd95d;
+  margin: 8px 0 0;
+  padding: 0;
+}
+body nav #drawer .option:hover hr {
+  display: block;
+}
+body nav #drawer .visited {
+  border-bottom: 2px solid #5dd95d;
+}
+body nav .open {
+  -webkit-transform: translate(0, 0) !important;
+  -moz-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  -o-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+}
+body main {
+  order: 2;
+  width: 100%;
+}
+body main .animation {
+  margin: 25vh auto 0;
+  width: 400px;
+  height: 250px;
+  font-size: 35px;
+  font-weight: 800;
+  color: #5dd95d;
+}
+body main .animation span {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 150px;
+}
+body main .animation .clicked {
+  -webkit-animation: spin 2s linear;
+  -moz-animation: spin 2s linear;
+  -ms-animation: spin 2s linear;
+  -o-animation: spin 2s linear;
+  animation: spin 2s linear;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+body footer {
+  order: 3;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+body footer #wrapper {
+  position: fixed;
+  width: 140px;
+  height: 60px;
+  bottom: 0;
+  right: 50%;
+  margin-right: -70px;
+  overflow: hidden;
+}
+body footer .triangle {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: #5dd95d;
+  color: #fff;
+  width: 90px;
+  height: 86px;
+  top: 25px;
+  position: relative;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+body footer .triangle p {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 40px;
+  padding: 8px 0 0 0;
+}
+
+@media only screen and (max-width: 1220px) {
+  #logo {
+    margin-right: 45vw !important;
+  }
+
+  main .motto {
+    width: 35% !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  body nav {
+    font-size: 10px !important;
+  }
+  body nav .option {
+    padding: 7px 5px 7px 0 !important;
+  }
+  body nav hr {
+    margin-top: 7px !important;
+  }
+  body nav .contact {
+    padding: 6px 20px !important;
+  }
+  body #logo {
+    margin-right: 42vw !important;
+  }
+  body main .motto {
+    margin-top: 12vh !important;
+    font-size: 26px !important;
+    width: 39.2% !important;
+  }
+  body main .animation {
+    margin-top: 13vh !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  body main .animation object {
+    width: 76px !important;
+    height: 76px !important;
+  }
+  body footer {
+    font-size: 9px !important;
+  }
+}
+@media only screen and (max-width: 920px) {
+  body #logo {
+    margin-right: 40vw !important;
+  }
+  body nav .contact {
+    padding: 6px 16px !important;
+  }
+  body main .motto {
+    margin-top: 12vh !important;
+    font-size: 26px !important;
+    width: 42% !important;
+  }
+}
+@media only screen and (max-width: 870px) {
+  body #logo {
+    margin-right: 36vw !important;
+  }
+  body main .motto {
+    font-size: 22px !important;
+  }
+  body main .animation {
+    margin-top: 15vh !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body #logo {
+    margin-right: 25vw !important;
+  }
+  body main .motto {
+    font-size: 20px !important;
+    width: 46% !important;
+  }
+}
+@media only screen and (max-width: 680px) {
+  body #logo {
+    margin-right: 20vw !important;
+  }
+  body main .motto {
+    font-size: 20px !important;
+  }
+  body main .animation {
+    margin-top: 16vh !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body #logo {
+    margin-right: 15vw !important;
+  }
+  body main .motto {
+    font-size: 20px !important;
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 570px) {
+  body nav #hamburger_menu {
+    display: block;
+    margin: 6vh 10vh 0 42vw;
+  }
+  body nav #drawer {
+    -webkit-transform: translate(300px,-530px);
+    -moz-transform: translate(300px,-530px);
+    -ms-transform: translate(300px,-530px);
+    -o-transform: translate(300px,-530px);
+    transform: translate(300px,-530px);
+    -webkit-transition: transform 0.1s ease-in;
+    -moz-transition: transform 0.1s ease-in;
+    -ms-transition: transform 0.1s ease-in;
+    -o-transition: transform 0.1s ease-in;
+    transition: transform 0.1s ease-in;
+    z-index: 10;
+    background-color: #fff;
+    width: 100%;
+    height: 530px;
+    padding: 10px;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  body nav #drawer .contact {
+    padding: 7px 20px !important;
+  }
+  body nav #drawer #image {
+    display: block;
+    margin-bottom: 2vh;
+  }
+  body nav #drawer #close {
+    display: block;
+  }
+  body nav #drawer #tags {
+    display: block;
+  }
+  body nav #drawer .option {
+    margin: 4vh auto;
+    width: 100px;
+  }
+  body main .motto {
+    font-size: 18px !important;
+  }
+  body main .animation {
+    margin-top: 17vh !important;
+  }
+  body footer .triangle {
+    width: 60px;
+    height: 59px;
+    top: 35px;
+  }
+  body footer p {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+  }
+  body footer p:after {
+    content: "+";
+    visibility: visible;
+    display: block;
+    position: absolute;
+    margin: -25px 0 0 4px;
+    width: 18px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 525px) {
+  body nav #logo {
+    width: 170px;
+    margin: 5vh auto 0 calc(50% - 55px);
+  }
+  body nav #logo img {
+    height: 5.1vh;
+  }
+  body nav #hamburger_menu {
+    margin: 6vh 10vh 0 6vh !important;
+  }
+  body main .motto {
+    font-size: 20px !important;
+    color: #5dd95d;
+    margin-top: 8vh !important;
+    width: 68% !important;
+  }
+  body main .animation {
+    margin-top: 15vh !important;
+  }
+  body main .animation object {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  body main span {
+    display: inline-block;
+    text-align: left;
+    height: 100%;
+    width: 55%;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 12px !important;
+  }
+  body main span::before {
+    margin-right: 2vw;
+  }
+  body main span:nth-of-type(1) {
+    order: 2;
+    margin-bottom: 4vh;
+  }
+  body main span:nth-of-type(2) {
+    order: 4;
+    margin-bottom: 4vh;
+  }
+  body main span:nth-of-type(3) {
+    order: 6;
+  }
+  body footer .triangle {
+    width: 60px;
+    height: 59px;
+    top: 45px;
+  }
+  body footer p:after {
+    margin-top: -27px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  body nav #hamburger_menu {
+    margin: 6vh 10vh 0 2vh !important;
+  }
+  body main .motto {
+    width: 67% !important;
+  }
+  body main .animation {
+    margin-top: 12vh !important;
+  }
+  body main .animation object {
+    width: 66px !important;
+    height: 66px !important;
+  }
+}
+@media only screen and (max-width: 350px) {
+  body nav #hamburger_menu {
+    margin: 6vh 10vh 0 3vh !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body main .animation {
+    margin-top: 6vh !important;
+  }
+  body main .bottom {
+    margin: 3vh auto 0 !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
