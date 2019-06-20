@@ -1,5 +1,3 @@
-
-
 let options = document.querySelectorAll('.option'),
   animation = document.querySelector('.animation'),
      object = document.querySelector('#kolko_kwadrat'),
