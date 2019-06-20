@@ -1,3 +1,5 @@
+
+
 let options = document.querySelectorAll('.option'),
   animation = document.querySelector('.animation'),
      object = document.querySelector('#kolko_kwadrat'),
@@ -8,12 +10,12 @@ let options = document.querySelectorAll('.option'),
 
 
 
-animation.addEventListener('click', function(){
-    object.classList.add("clicked");
-    setTimeout(function(){
-    object.classList.remove("clicked");
-    }, 2000);
-});
+// animation.addEventListener('click', function(){
+//     object.classList.add("clicked");
+//     setTimeout(function(){
+//     object.classList.remove("clicked");
+//     }, 2000);
+// });
 
 options.forEach(function(option){
     option.addEventListener('click', function(){

@@ -101,8 +101,8 @@ body main {
 }
 body main .animation {
   margin: 25vh auto 0;
-  width: 400px;
-  height: 250px;
+  width: 60%;
+  height: 40%;
   font-size: 35px;
   font-weight: 800;
   color: #5dd95d;
@@ -144,6 +144,25 @@ body main .animation .clicked {
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+body main .container {
+  margin: 25vh auto 0;
+  width: 400px;
+  height: 250px;
+  font-size: 35px;
+  font-weight: 800;
+  color: #5dd95d;
+}
+body main .container span {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 150px;
+}
+body main .container #map {
+  width: 100%;
+  height: 100%;
+  margin: 10vh auto 0;
 }
 body footer {
   order: 3;
