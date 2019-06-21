@@ -147,13 +147,12 @@ function fetchData(city){
 * Function populates fields on front end with thata that was fetched from the server
 */
 function populateFieldsWithData(fetchedData){
-  console.log(fetchedData.data[0].wynagrodzenie_brutto);
   animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie));
   animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodznieRelacja));
   animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].stopaBezrobocia));
   animateValue(offersPerPerson, 0, Math.round(1000 * fetchedData.data[0].ofertyPracyNaMieszkanca));
   animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].cenam2));
-  createPieChart();
+  createPieChart(fetchedData);
 }
 
 /**
@@ -180,24 +179,23 @@ function animateValue(element, start, end) {
 /**
 * Function creates pie chart
 */
-function createPieChart(){
+function createPieChart(json){
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
+
+  let array = [];
+  array.push(['Sektor', 'Udział']);
+  array.push(['Rolnictwo', json.data[0].zatrudnieniRolnictwo]);
+  array.push(['Przemysł', json.data[0].zatrudnieniPrzemysl]);
+  array.push(['Usługi', json.data[0].zatrudnieniUslugi]);
 
   // Draw the chart and set the chart values
   function drawChart() {
     //tutaj dac argument tego : data
-    var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work', 8],
-    ['Eat', 2],
-    ['TV', 4],
-    ['Gym', 2],
-    ['Sleep', 8]
-  ]);
+    var data = google.visualization.arrayToDataTable(array);
 
     // Optional; add a title and set the width and height of the chart
-    var options = {'title':'Liczba ofert pracy w zależności od branży', 'width':550, 'height':400};
+    var options = {'title':'Osoby zatrudnione w sektorach', 'width':550, 'height':400};
 
     // Display the chart inside the <div> element with id="piechart"
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
