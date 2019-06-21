@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const dataRoutes = require('./api/routes/data');
 const infoRoutes = require('./api/routes/info');
+///
+const wykonaj = require('./index');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -40,5 +42,5 @@ app.use((error, req, res, next) => {
         }
     });
 });
-
+// wykonaj();
 module.exports = app;

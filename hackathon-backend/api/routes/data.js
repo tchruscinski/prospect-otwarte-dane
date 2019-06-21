@@ -1,6 +1,7 @@
 const express = require('express');
 const jobsOffersInfo = require('../services/jobsInfo');
 const Salary = require('../services/salaries');
+const CityData = require('../services/cityData');
 const router = express.Router();
 const connection = require('../db/dbconnect');
 
@@ -28,9 +29,21 @@ router.get('/', (req, res, next) => {
 //     });
 // });
 
-router.get('/:city', (req, res, next) => {
+router.get('/salary/:city', (req, res, next) => {
     const salary = new Salary(req.params.city);
     connection.query(salary.createSelectQuery(), function (error, results, fields) {
+        if (error) throw error;
+        res.status(200).json({
+            message: "Pobrales wynagrodzenia z " + req.params.city,
+            data: results,
+            yourValue: req.params.city
+        });
+    });
+});
+
+router.get('/allData/:city', (req, res, next) => {
+    const cityData = new CityData(req.params.city);
+    connection.query(cityData.createSelectQuery(), function (error, results, fields) {
         if (error) throw error;
         res.status(200).json({
             message: "Pobrales wynagrodzenia z " + req.params.city,
