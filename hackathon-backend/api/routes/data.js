@@ -46,9 +46,20 @@ router.get('/allData/:city', (req, res, next) => {
     connection.query(cityData.createSelectQuery(), function (error, results, fields) {
         if (error) throw error;
         res.status(200).json({
-            message: "Pobrales wynagrodzenia z " + req.params.city,
+            message: "Pobrales wszytskie dane o " + req.params.city,
             data: results,
             yourValue: req.params.city
+        });
+    });
+});
+
+router.get('/allCities', (req, res, next) => {
+    const cityData = new CityData(null);
+    connection.query(cityData.createSelectQueryAllCities(), function (error, results, fields) {
+        if (error) throw error;
+        res.status(200).json({
+            message: "Pobrales dane o wszytskich miastach",
+            data: results
         });
     });
 });
