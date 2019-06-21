@@ -150,7 +150,7 @@ function populateFieldsWithData(fetchedData){
   animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_brutto));
   animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_w_relacji));
   animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].procent_bezrobocia));
-  animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].AVG(nieruchomosci.cena)));
+  animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].cenam2));
   createPieChart();
 }
 
