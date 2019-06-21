@@ -1,4 +1,9 @@
-let map = document.querySelector('#map');
+let map = document.querySelector('#map'),
+    infoHeader = document.querySelector('#info-header'),
+    cellAverageIncome = document.querySelector('.average-income'),
+    cellPercentageIncome = document.querySelector('.percentage-income');
+
+
 let markers = [
   {
     'name': 'Warszawa',
@@ -8,14 +13,14 @@ let markers = [
     }
   },
   {
-    'name': 'Poznan',
+    'name': 'Poznań',
     'coordinates':{
       lat: 52.409538,
       lng: 16.931992
     }
   },
   {
-    'name': 'Gdansk',
+    'name': 'Gdańsk',
     'coordinates':{
       lat: 54.372158,
       lng: 18.638306
@@ -29,7 +34,7 @@ let markers = [
     }
   },
   {
-    'name': 'Krakow',
+    'name': 'Kraków',
     'coordinates':{
       lat: 50.049683,
       lng: 19.944544
@@ -102,7 +107,6 @@ function printMarkers(markers, map) {
         map.setCenter(mapMarker.getPosition());
         handleMarkerClick(markers[i].name)
       });
-      //setUpMarkerListener(mapMarker);
     }
 }
 
@@ -110,16 +114,59 @@ function printMarkers(markers, map) {
 * Function handles click event on map marker
 */
 function handleMarkerClick(cityName) {
-  console.log(cityName);
+  infoHeader.innerHTML = cityName;
+  //animateValue(cellAverageIncome, 0, 6134);
+  fetchData(cityName);
 }
 
 /**
 * Function fetching all job offers from the db
 */
-function fetchAllJobOffers(){
-  fetch('http://localhost:3000/data').then(function(response) {
+function fetchData(city){
+  fetch('http://localhost:3000/data/' + city).then(function(response) {
       return response.json();
   }).then(function(myJson) {
-    console.log(JSON.stringify(myJson));
+    data = JSON.stringify(myJson);
+    console.log(data);
+    populateFieldsWithData(myJson);
   });
+}
+
+/**
+* Function populates fields on front end with thata that was fetched from the server
+*/
+function populateFieldsWithData(fetchedData){
+  console.log(fetchedData.data[0].wynagrodzenie_brutto);
+  // /animateValue(cellAverageIncome, 0, fetchedData.data[0].wynagrodzenie_brutto);
+  animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_w_relacji));
+}
+
+/**
+* Function animates number increasing sequence
+*/
+// function animateIncreaseNumber(element, target){
+//   let number = 0;
+//   let interval = setInterval(function() {
+//        element.innerHTML = number;
+//        if (number >= target)
+//        number++;
+//    }, 30);
+// }
+
+function animateValue(element, start, end) {
+    var current = start;
+    var increment = 100;
+    var timer = setInterval(function() {
+      if(end - current <= 100 && end - current > 10){
+        increment = 10;
+      } else if (end - current <= 10) {
+        increment = 1;
+      }
+      current += increment;
+      element.innerHTML = current;
+      if (current == end) {
+          clearInterval(timer);
+          return;
+      }
+    }, 100);
 }
