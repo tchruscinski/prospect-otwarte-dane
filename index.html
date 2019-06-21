@@ -41,7 +41,7 @@
         </div>
         <a href="mapa.html" class="option">Mapa<hr/></a>
         <a href="compare.html" class="option">Porównanie<hr/></a>
-        <a href="#" class="option">O Nas<hr/></a>
+        <a href="about.html" class="option">O Nas<hr/></a>
         <a href="#" class="option">Kontakt<hr/></a>
       </div>
     </nav>
@@ -63,5 +63,20 @@
 
 
       <script src="src/main.js"></script>
+      <script>
+        let message = document.querySelector('#message');
+
+        let text = ["Praca.", "Perspektywy.", "Prospect."];
+        let counter = 0;
+        let inst = setInterval(changeText, 1000);
+
+        function changeText() {
+          message.innerHTML = text[counter];
+          counter++;
+          if(counter >= text.length) {
+            counter = 0;
+          }
+        }
+      </script>
   </body>
 </html>

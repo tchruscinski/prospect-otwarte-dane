@@ -111,6 +111,20 @@ body main .animation {
   font-weight: 800;
   color: #5dd95d;
 }
+body main .animation #about {
+  display: block;
+  width: 600px;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #808080;
+}
+body main .animation #about #dane {
+  color: #5dd95d;
+  white-space: nowrap;
+  margin: 0;
+}
 body main .animation span {
   margin: 0 auto;
   display: block;
@@ -181,6 +195,10 @@ body main .container .info {
   flex-wrap: wrap;
   color: #808080;
 }
+body main .container .info p {
+  margin: 0 0 2vh;
+  height: 6vh;
+}
 body main .container .info #info-header {
   width: 100%;
   height: 8vh;
@@ -198,14 +216,10 @@ body main .container .info .income {
   height: 12vh;
   box-sizing: border-box;
   font-size: 16px;
-  margin-top: -15vh;
+  margin-top: -12vh;
   order: 2;
   text-align: center;
   visibility: hidden;
-}
-body main .container .info .income p {
-  margin: 0;
-  height: 6vh;
 }
 body main .container .info .income:nth-of-type(2) {
   padding-right: 20px;
@@ -215,14 +229,10 @@ body main .container .info .work {
   height: 12vh;
   box-sizing: border-box;
   font-size: 16px;
-  margin-top: -16vh;
+  margin-top: -10vh;
   order: 3;
   text-align: center;
   visibility: hidden;
-}
-body main .container .info .work p {
-  margin: 0;
-  height: 6vh;
 }
 body main .container .info .work:nth-of-type(2) {
   padding-right: 20px;
@@ -232,14 +242,10 @@ body main .container .info .properties {
   height: 12vh;
   box-sizing: border-box;
   font-size: 16px;
-  margin-top: -20vh;
+  margin-top: -10vh;
   order: 4;
   text-align: center;
   visibility: hidden;
-}
-body main .container .info .properties p {
-  margin: 0;
-  height: 6vh;
 }
 body main .container .info .properties:nth-of-type(2) {
   padding-right: 20px;
@@ -253,17 +259,21 @@ body main .container .charts {
 body main .comparison {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 5vh;
 }
-body main .comparison .compare-salaries {
+body main .comparison .salaries-container {
   order: 1;
-  width: 50% !important;
+  width: 50%;
   text-align: center;
-  padding-left: 40px;
+  padding-left: 60px;
+  box-sizing: border-box;
 }
-body main .comparison .compare-properties {
+body main .comparison .properties-container {
   order: 2;
-  width: 50% !important;
+  width: 50%;
   text-align: center;
+  box-sizing: border-box;
 }
 body footer {
   order: 3;
@@ -310,10 +320,6 @@ body footer .triangle p {
   #logo {
     margin-right: 45vw !important;
   }
-
-  main .motto {
-    width: 35% !important;
-  }
 }
 @media only screen and (max-width: 1024px) {
   body nav {
@@ -331,11 +337,6 @@ body footer .triangle p {
   body #logo {
     margin-right: 42vw !important;
   }
-  body main .motto {
-    margin-top: 12vh !important;
-    font-size: 26px !important;
-    width: 39.2% !important;
-  }
   body main .animation {
     margin-top: 13vh !important;
     width: 80px !important;
@@ -349,6 +350,16 @@ body footer .triangle p {
     font-size: 9px !important;
   }
 }
+@media only screen and (max-width: 1200px) {
+  body main .salaries-container {
+    width: 100% !important;
+    padding-left: 200px !important;
+  }
+  body main .properties-container {
+    width: 100% !important;
+    padding-left: 200px !important;
+  }
+}
 @media only screen and (max-width: 920px) {
   body #logo {
     margin-right: 40vw !important;
@@ -356,38 +367,50 @@ body footer .triangle p {
   body nav .contact {
     padding: 6px 16px !important;
   }
-  body main .motto {
-    margin-top: 12vh !important;
-    font-size: 26px !important;
-    width: 42% !important;
-  }
 }
 @media only screen and (max-width: 870px) {
   body #logo {
     margin-right: 36vw !important;
   }
-  body main .motto {
-    font-size: 22px !important;
-  }
   body main .animation {
     margin-top: 15vh !important;
+  }
+  body main .salaries-container {
+    padding-left: 50px !important;
+  }
+  body main .properties-container {
+    padding-left: 50px !important;
   }
 }
 @media only screen and (max-width: 800px) {
   body #logo {
     margin-right: 25vw !important;
   }
-  body main .motto {
-    font-size: 20px !important;
-    width: 46% !important;
+  body main #map {
+    width: 100% !important;
+  }
+  body main .info {
+    width: 100% !important;
+  }
+  body main .info p {
+    margin-bottom: 4vh !important;
+  }
+  body main .info .income {
+    margin: 0 0 10vh !important;
+  }
+  body main .info .income p {
+    margin-bottom: 4vh !important;
+  }
+  body main .info .work {
+    margin: 0 0 10vh !important;
+  }
+  body main .info .properties {
+    margin: 0 0 10vh !important;
   }
 }
 @media only screen and (max-width: 680px) {
   body #logo {
     margin-right: 20vw !important;
-  }
-  body main .motto {
-    font-size: 20px !important;
   }
   body main .animation {
     margin-top: 16vh !important;
@@ -448,6 +471,12 @@ body footer .triangle p {
   }
   body main .animation {
     margin-top: 17vh !important;
+  }
+  body main .salaries-container {
+    padding: 0 !important;
+  }
+  body main .properties-container {
+    padding: 0 !important;
   }
   body footer .triangle {
     width: 60px;

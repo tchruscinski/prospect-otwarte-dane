@@ -7,11 +7,6 @@
   #logo{
     margin-right: 45vw !important;
   }
-  main{
-    .motto{
-      width: 35% !important;
-    }
-  }
 }
 
 
@@ -39,12 +34,6 @@
     }
 
     main{
-      .motto{
-        margin-top: 12vh !important;
-        font-size: 26px !important;
-        width: 39.2% !important;
-      }
-
       .animation{
           margin-top: 13vh !important;
           width: 80px !important;
@@ -64,6 +53,22 @@
   }
 }
 
+@media only screen and (max-width: 1200px){
+  body{
+
+
+    main{
+      .salaries-container{
+        width: 100% !important;
+        padding-left: 200px !important;
+      }
+      .properties-container{
+        width: 100% !important;
+        padding-left: 200px !important;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 920px){
   body{
@@ -73,13 +78,6 @@
     nav{
       .contact{
           padding: 6px 16px !important;
-      }
-    }
-    main{
-      .motto{
-        margin-top: 12vh !important;
-        font-size: 26px !important;
-        width: 42% !important;
       }
     }
   }
@@ -93,11 +91,16 @@
     }
 
     main{
-      .motto{
-        font-size: 22px !important;
-      }
+
       .animation{
           margin-top: 15vh !important;
+      }
+
+      .salaries-container{
+        padding-left: 50px !important;
+      }
+      .properties-container{
+        padding-left: 50px !important;
       }
     }
   }
@@ -110,9 +113,28 @@
       margin-right: 25vw !important;
     }
     main{
-      .motto{
-        font-size: 20px !important;
-        width: 46% !important;
+      #map{
+        width: 100% !important;
+      }
+      .info{
+        width: 100% !important;
+
+        p{
+          margin-bottom: 4vh !important;
+        }
+        .income{
+          margin: 0 0 10vh !important;
+
+          p{
+            margin-bottom: 4vh !important;
+          }
+        }
+        .work{
+          margin: 0 0 10vh !important;
+        }
+        .properties{
+          margin: 0 0 10vh !important;
+        }
       }
     }
   }
@@ -126,9 +148,6 @@
     }
 
     main{
-      .motto{
-        font-size: 20px !important;
-      }
       .animation{
           margin-top: 16vh !important;
       }
@@ -201,6 +220,13 @@
     main{
       .animation{
           margin-top: 17vh !important;
+      }
+
+      .salaries-container{
+        padding: 0 !important;
+      }
+      .properties-container{
+        padding: 0 !important;
       }
     }
     footer{

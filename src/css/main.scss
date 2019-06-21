@@ -123,6 +123,22 @@ body{
             font-weight: 800;
             color: $font-color;
 
+            #about{
+              display: block;
+              width: 600px;
+              font-size: 16px;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+              color: $second-font-color;
+
+              #dane{
+                color: $font-color;
+                white-space: nowrap;
+                margin: 0;
+              }
+            }
+
             span{
               margin: 0 auto;
               display: block;
@@ -175,6 +191,11 @@ body{
             flex-wrap: wrap;
             color: $second-font-color;
 
+            p{
+              margin: 0 0 2vh;
+              height: 6vh;
+            }
+
             #info-header{
               width: 100%;
               height: 8vh;
@@ -194,16 +215,10 @@ body{
               height: 12vh;
               box-sizing: border-box;
               font-size: 16px;
-              margin-top: -15vh;
+              margin-top: -12vh;
               order: 2;
               text-align: center;
               visibility: hidden;
-
-
-              p{
-                margin: 0;
-                height: 6vh;
-              }
             }
             .income:nth-of-type(2){
               padding-right: 20px;
@@ -214,16 +229,10 @@ body{
               height: 12vh;
               box-sizing: border-box;
               font-size: 16px;
-              margin-top: -16vh;
+              margin-top: -10vh;
               order: 3;
               text-align: center;
               visibility: hidden;
-
-
-              p{
-                margin: 0;
-                height: 6vh;
-              }
             }
             .work:nth-of-type(2){
               padding-right: 20px;
@@ -234,16 +243,10 @@ body{
               height: 12vh;
               box-sizing: border-box;
               font-size: 16px;
-              margin-top: -20vh;
+              margin-top: -10vh;
               order: 4;
               text-align: center;
               visibility: hidden;
-
-
-              p{
-                margin: 0;
-                height: 6vh;
-              }
             }
             .properties:nth-of-type(2){
               padding-right: 20px;
@@ -262,18 +265,22 @@ body{
         .comparison{
           width: 100%;
           display: flex;
+          flex-wrap: wrap;
+          margin-top: 5vh;
 
-          .compare-salaries{
+          .salaries-container{
             order: 1;
-            width: 50% !important;
+            width: 50%;
             text-align: center;
-            padding-left: 40px;
+            padding-left: 60px;
+            box-sizing: border-box;
           }
 
-          .compare-properties{
+          .properties-container{
             order: 2;
-            width: 50% !important;
+            width: 50%;
             text-align: center;
+            box-sizing: border-box;
           }
         }
       }

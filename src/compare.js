@@ -9,7 +9,7 @@ function compareSalaries(json){
     array.push(["Element", "Zarobki", { role: "style" } ]);
     console.log(json);
     for(let i = 0; i < json.data.length; i++){
-      array.push([json.data[i].miasto, json.data[i].wynagrodzenie_brutto, "#"+((1<<24)*Math.random()|0).toString(16)]);
+      array.push([json.data[i].miasto, json.data[i].wynagrodzenie, "#"+((1<<24)*Math.random()|0).toString(16)]);
     }
     console.log(array);
     function drawChart() {

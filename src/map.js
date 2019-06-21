@@ -4,6 +4,7 @@ let map = document.querySelector('#map'),
     cellPercentageIncome = document.querySelector('.percentage-income'),
     unemploymentPercentage = document.querySelector('.unemployment'),
     averageSquarePrice = document.querySelector('.price-m2'),
+    offersPerPerson = document.querySelector('.job-offers'),
     incomeCells = document.getElementsByClassName('income'),
     workCells = document.getElementsByClassName('work')
     propertiesCells = document.getElementsByClassName('properties');
@@ -147,10 +148,11 @@ function fetchData(city){
 */
 function populateFieldsWithData(fetchedData){
   console.log(fetchedData.data[0].wynagrodzenie_brutto);
-  animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_brutto));
-  animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_w_relacji));
-  animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].procent_bezrobocia));
-  animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].AVG(nieruchomosci.cena)));
+  animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie));
+  animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodznieRelacja));
+  animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].stopaBezrobocia));
+  animateValue(offersPerPerson, 0, Math.round(1000 * fetchedData.data[0].ofertyPracyNaMieszkanca));
+  animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].cenam2));
   createPieChart();
 }
 
