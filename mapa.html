@@ -39,8 +39,8 @@
             Close
           </object>
         </div>
-        <a href="#" class="option">Perspektywy<hr/></a>
         <a href="mapa.html" class="option">Mapa<hr/></a>
+        <a href="compare.html" class="option">Porównanie<hr/></a>
         <a href="#" class="option">O Nas<hr/></a>
         <a href="#" class="option">Kontakt<hr/></a>
       </div>
@@ -53,12 +53,25 @@
             <span id="info-header">Wybierz miasto</span>
             <div class="income">
               <p>Średnie wynagrodzenie brutto</p>
-              <span class="value average-income"></span>
+              <span class="value average-income"></span> zł
             </div>
             <div class="income">
               <p>Względem średniego wynagrodzenia w Polsce</p>
-              <span class="value percentage-income">x</span>
+              <span class="value percentage-income"></span> %
             </div>
+            <div class="work">
+              <p>Liczba ofert pracy na osobę</p>
+              <span class="value job-offers"></span>
+            </div>
+            <div class="work">
+              <p>Procent bezrobocia</p>
+              <span class="value unemployment"></span> %
+            </div>
+        </div>
+        <div class="charts">
+          <div id="piechart">
+
+          </div>
         </div>
       </div>
     </main>
@@ -70,5 +83,6 @@
       <script src="src/main.js"></script>
       <script src="src/map.js"></script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEnjBo8LLBHg1FmamSLcS-WUDHZOUMYPw&callback=initMap"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </body>
 </html>

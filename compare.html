@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   </head>
-  <body>
+  <body onload="drawcharts()">
     <nav>
       <div id="logo">
         <a href="index.html">
@@ -46,22 +46,16 @@
       </div>
     </nav>
     <main>
-      <div class="animation">
-        <span>Praca.</span>
+      <div class="comparison">
+        <div id="compare-salaries">
+
+        </div>
       </div>
     </main>
 
-    <footer>
-      <div id="wrapper">
-        <div class="triangle">
-          <p>
-            Start
-          </p>
-        </div>
-      </div>
-    </footer>
-
 
       <script src="src/main.js"></script>
+      <script src="src/compare.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </body>
 </html>

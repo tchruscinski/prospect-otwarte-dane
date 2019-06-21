@@ -1,7 +1,10 @@
 let map = document.querySelector('#map'),
     infoHeader = document.querySelector('#info-header'),
     cellAverageIncome = document.querySelector('.average-income'),
-    cellPercentageIncome = document.querySelector('.percentage-income');
+    cellPercentageIncome = document.querySelector('.percentage-income'),
+    incomeCells = document.getElementsByClassName('income'),
+    workCells = document.getElementsByClassName('work');
+
 
 
 let markers = [
@@ -115,7 +118,10 @@ function printMarkers(markers, map) {
 */
 function handleMarkerClick(cityName) {
   infoHeader.innerHTML = cityName;
-  //animateValue(cellAverageIncome, 0, 6134);
+  for(var i = 0; i < incomeCells.length; i++){
+    incomeCells[i].style.visibility = 'visible';
+    workCells[i].style.visibility = 'visible';
+  }
   fetchData(cityName);
 }
 
@@ -137,22 +143,14 @@ function fetchData(city){
 */
 function populateFieldsWithData(fetchedData){
   console.log(fetchedData.data[0].wynagrodzenie_brutto);
-  // /animateValue(cellAverageIncome, 0, fetchedData.data[0].wynagrodzenie_brutto);
+  animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_brutto));
   animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_w_relacji));
+  createPieChart();
 }
 
 /**
 * Function animates number increasing sequence
 */
-// function animateIncreaseNumber(element, target){
-//   let number = 0;
-//   let interval = setInterval(function() {
-//        element.innerHTML = number;
-//        if (number >= target)
-//        number++;
-//    }, 30);
-// }
-
 function animateValue(element, start, end) {
     var current = start;
     var increment = 100;
@@ -168,5 +166,33 @@ function animateValue(element, start, end) {
           clearInterval(timer);
           return;
       }
-    }, 100);
+    }, 10);
+}
+
+/**
+* Function creates pie chart
+*/
+function createPieChart(){
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Draw the chart and set the chart values
+  function drawChart() {
+    //tutaj dac argument tego : data
+    var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work', 8],
+    ['Eat', 2],
+    ['TV', 4],
+    ['Gym', 2],
+    ['Sleep', 8]
+  ]);
+
+    // Optional; add a title and set the width and height of the chart
+    var options = {'title':'Liczba ofert pracy w zależności od branży', 'width':550, 'height':400};
+
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
 }

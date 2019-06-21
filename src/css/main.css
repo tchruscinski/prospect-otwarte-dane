@@ -3,6 +3,10 @@ html, body {
   padding: 0 !important;
 }
 
+.visible {
+  visibility: visible;
+}
+
 body {
   display: flex;
   flex-wrap: wrap;
@@ -186,24 +190,48 @@ body main .container .info #info-header {
   margin-top: 8vh;
   text-align: center;
 }
+body main .container .info .visible {
+  visibility: visible;
+}
 body main .container .info .income {
   width: 50%;
   height: 12vh;
   box-sizing: border-box;
   font-size: 16px;
-  margin-top: -30vh;
+  margin-top: -18vh;
+  order: 2;
   text-align: center;
+  visibility: hidden;
 }
 body main .container .info .income p {
   margin: 0;
   height: 6vh;
 }
-body main .container .info .income:nth-of-type(1) {
-  order: 2;
-}
 body main .container .info .income:nth-of-type(2) {
-  order: 3;
   padding-right: 20px;
+}
+body main .container .info .work {
+  width: 50%;
+  height: 12vh;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-top: -25vh;
+  order: 3;
+  text-align: center;
+  visibility: hidden;
+}
+body main .container .info .work p {
+  margin: 0;
+  height: 6vh;
+}
+body main .container .info .work:nth-of-type(2) {
+  padding-right: 20px;
+}
+body main .container .charts {
+  order: 4 !important;
+  width: 100%;
+  margin-top: 5vh;
+  height: 30vh;
 }
 body footer {
   order: 3;
