@@ -4,7 +4,12 @@ let options = document.querySelectorAll('.option'),
   hamburger = document.querySelector('#hamburger_menu'),
      drawer = document.querySelector('#drawer'),
      close  = document.querySelector('#close'),
-       main = document.querySelector('main');
+       main = document.querySelector('main'),
+    message = document.querySelector('#message');
+
+  var text = ["Praca.", "Perspektywy.", "Prospect."];
+  var counter = 0;
+  var inst = setInterval(changeText, 1000);
 
 
 
@@ -36,3 +41,12 @@ main.addEventListener('click', function() {
 close.addEventListener('click', function() {
       drawer.classList.remove('open');
     });
+
+
+function changeText() {
+  message.innerHTML = text[counter];
+  counter++;
+  if(counter >= text.length) {
+    counter = 0;
+  }
+}
