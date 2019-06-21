@@ -2,8 +2,11 @@ let map = document.querySelector('#map'),
     infoHeader = document.querySelector('#info-header'),
     cellAverageIncome = document.querySelector('.average-income'),
     cellPercentageIncome = document.querySelector('.percentage-income'),
+    unemploymentPercentage = document.querySelector('.unemployment'),
+    averageSquarePrice = document.querySelector('.price-m2'),
     incomeCells = document.getElementsByClassName('income'),
-    workCells = document.getElementsByClassName('work');
+    workCells = document.getElementsByClassName('work')
+    propertiesCells = document.getElementsByClassName('properties');
 
 
 
@@ -121,6 +124,7 @@ function handleMarkerClick(cityName) {
   for(var i = 0; i < incomeCells.length; i++){
     incomeCells[i].style.visibility = 'visible';
     workCells[i].style.visibility = 'visible';
+    propertiesCells[i].style.visibility = 'visible';
   }
   fetchData(cityName);
 }
@@ -129,7 +133,7 @@ function handleMarkerClick(cityName) {
 * Function fetching all job offers from the db
 */
 function fetchData(city){
-  fetch('http://localhost:3000/data/' + city).then(function(response) {
+  fetch('http://localhost:3000/data/allData/' + city).then(function(response) {
       return response.json();
   }).then(function(myJson) {
     data = JSON.stringify(myJson);
@@ -145,6 +149,8 @@ function populateFieldsWithData(fetchedData){
   console.log(fetchedData.data[0].wynagrodzenie_brutto);
   animateValue(cellAverageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_brutto));
   animateValue(cellPercentageIncome, 0, Math.round(fetchedData.data[0].wynagrodzenie_w_relacji));
+  animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].procent_bezrobocia));
+  animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].AVG(nieruchomosci.cena)));
   createPieChart();
 }
 

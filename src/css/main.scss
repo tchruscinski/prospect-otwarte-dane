@@ -194,7 +194,7 @@ body{
               height: 12vh;
               box-sizing: border-box;
               font-size: 16px;
-              margin-top: -18vh;
+              margin-top: -15vh;
               order: 2;
               text-align: center;
               visibility: hidden;
@@ -214,7 +214,7 @@ body{
               height: 12vh;
               box-sizing: border-box;
               font-size: 16px;
-              margin-top: -25vh;
+              margin-top: -16vh;
               order: 3;
               text-align: center;
               visibility: hidden;
@@ -226,6 +226,26 @@ body{
               }
             }
             .work:nth-of-type(2){
+              padding-right: 20px;
+            }
+
+            .properties{
+              width: 50%;
+              height: 12vh;
+              box-sizing: border-box;
+              font-size: 16px;
+              margin-top: -20vh;
+              order: 4;
+              text-align: center;
+              visibility: hidden;
+
+
+              p{
+                margin: 0;
+                height: 6vh;
+              }
+            }
+            .properties:nth-of-type(2){
               padding-right: 20px;
             }
           }
@@ -242,6 +262,19 @@ body{
         .comparison{
           width: 100%;
           display: flex;
+
+          .compare-salaries{
+            order: 1;
+            width: 50% !important;
+            text-align: center;
+            padding-left: 40px;
+          }
+
+          .compare-properties{
+            order: 2;
+            width: 50% !important;
+            text-align: center;
+          }
         }
       }
 
