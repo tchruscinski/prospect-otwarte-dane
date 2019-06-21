@@ -1,0 +1,10 @@
+<script>
+  fetch('http://localhost:3000/data/allCities')
+  .then(function(response) {
+    return response.json();
+    console.log(response)
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
+</script>
