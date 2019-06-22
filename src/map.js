@@ -5,8 +5,11 @@ let map = document.querySelector('#map'),
     unemploymentPercentage = document.querySelector('.unemployment'),
     averageSquarePrice = document.querySelector('.price-m2'),
     offersPerPerson = document.querySelector('.job-offers'),
+    attractiveFactor = document.querySelector('.attractive-factor'),
+    growthFactor = document.querySelector('.growth-factor'),
     incomeCells = document.getElementsByClassName('income'),
-    workCells = document.getElementsByClassName('work')
+    workCells = document.getElementsByClassName('work'),
+    factorCells = document.getElementsByClassName('factors'),
     propertiesCells = document.getElementsByClassName('properties');
 
 
@@ -126,6 +129,7 @@ function handleMarkerClick(cityName) {
     incomeCells[i].style.visibility = 'visible';
     workCells[i].style.visibility = 'visible';
     propertiesCells[i].style.visibility = 'visible';
+    factorCells[i].style.visibility = 'visible';
   }
   fetchData(cityName);
 }
@@ -152,6 +156,8 @@ function populateFieldsWithData(fetchedData){
   animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].stopaBezrobocia));
   animateValue(offersPerPerson, 0, Math.round(1000 * fetchedData.data[0].ofertyPracyNaMieszkanca));
   animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].cenam2));
+  animateValue(growthFactor, 0, fetchedData.data[0].wspMatiego);
+  animateValue(attractiveFactor, 0, Math.round(fetchedData.data[0].wspTomka));
   createPieChart(fetchedData);
 }
 

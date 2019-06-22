@@ -46,6 +46,7 @@ body{
             order: 2;
             min-width: 32px;
             min-height: 22px;
+            background-color: $font-color;
           }
 
           #drawer{
@@ -258,6 +259,34 @@ body{
             width: 100%;
             margin-top: 5vh;
             height: 30vh;
+            display: flex;
+
+            #piechart{
+              width: 40%;
+              order: 1;
+            }
+
+            .factors{
+              visibility: hidden;
+              color: $second-font-color;
+              width: 60%;
+              box-sizing: border-box;
+              font-size: 16px;
+              text-align: center;
+              order: 2;
+              margin-top: 10vh;
+            }
+
+            .attractive-factor{
+              width: 50%;
+              margin-left: 10vw;
+              margin: 0 auto 0;
+            }
+
+            .growth-factor{
+              width: 50%;
+              margin: 0 auto 0;
+            }
           }
 
         }
@@ -318,6 +347,19 @@ body{
           @include prefix('transform', 'rotate(-45deg)');
           width: 40px;
           padding: 8px 0 0 0;
+        }
+
+        .triangle:hover{
+          background-color: $bg-color;
+          color: $font-color;
+          font-size: 18px;
+          font-weight: 800;
+          p{
+            display: block;
+            transform: translate(-10px, -30px);
+            -webkit-transform: translate(-10px, -30px);
+            transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+          }
         }
       }
 

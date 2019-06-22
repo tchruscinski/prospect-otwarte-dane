@@ -44,6 +44,7 @@ body nav #hamburger_menu {
   order: 2;
   min-width: 32px;
   min-height: 22px;
+  background-color: #5dd95d;
 }
 body nav #drawer {
   order: 2;
@@ -255,6 +256,30 @@ body main .container .charts {
   width: 100%;
   margin-top: 5vh;
   height: 30vh;
+  display: flex;
+}
+body main .container .charts #piechart {
+  width: 40%;
+  order: 1;
+}
+body main .container .charts .factors {
+  visibility: hidden;
+  color: #808080;
+  width: 60%;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  order: 2;
+  margin-top: 10vh;
+}
+body main .container .charts .attractive-factor {
+  width: 50%;
+  margin-left: 10vw;
+  margin: 0 auto 0;
+}
+body main .container .charts .growth-factor {
+  width: 50%;
+  margin: 0 auto 0;
 }
 body main .comparison {
   width: 100%;
@@ -315,6 +340,18 @@ body footer .triangle p {
   width: 40px;
   padding: 8px 0 0 0;
 }
+body footer .triangle:hover {
+  background-color: #fff;
+  color: #5dd95d;
+  font-size: 18px;
+  font-weight: 800;
+}
+body footer .triangle:hover p {
+  display: block;
+  transform: translate(-10px, -30px);
+  -webkit-transform: translate(-10px, -30px);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
 
 @media only screen and (max-width: 1220px) {
   #logo {
@@ -358,6 +395,12 @@ body footer .triangle p {
   body main .properties-container {
     width: 100% !important;
     padding-left: 200px !important;
+  }
+  body main .charts {
+    flex-wrap: wrap;
+  }
+  body main .charts #piechart {
+    width: 100% !important;
   }
 }
 @media only screen and (max-width: 920px) {
@@ -511,11 +554,11 @@ body footer .triangle p {
   body nav #hamburger_menu {
     margin: 6vh 10vh 0 6vh !important;
   }
-  body main .motto {
-    font-size: 20px !important;
-    color: #5dd95d;
-    margin-top: 8vh !important;
-    width: 68% !important;
+  body main #title {
+    margin-top: 10vh !important;
+  }
+  body main #map {
+    margin-top: -60vh !important;
   }
   body main .animation {
     margin-top: 15vh !important;

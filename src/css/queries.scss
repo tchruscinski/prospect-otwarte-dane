@@ -66,6 +66,12 @@
         width: 100% !important;
         padding-left: 200px !important;
       }
+      .charts{
+          flex-wrap: wrap;
+          #piechart{
+            width: 100% !important;
+          }
+      }
     }
   }
 }
@@ -218,6 +224,7 @@
       }
     }
     main{
+
       .animation{
           margin-top: 17vh !important;
       }
@@ -278,11 +285,12 @@
     }
 
     main{
-      .motto{
-        font-size: 20px !important;
-        color: $font-color;
-        margin-top: 8vh !important;
-        width: 68% !important;
+      #title{
+          margin-top: 10vh !important;
+      }
+
+      #map{
+        margin-top: -60vh !important;
       }
       .animation{
           margin-top: 15vh !important;
