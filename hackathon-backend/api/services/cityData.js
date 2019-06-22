@@ -20,7 +20,7 @@ class cityData {
             let uslugi = results[index].zatrudnieni_uslugi / (results[index].zatrudnieni_rolnictwo + results[index].zatrudnieni_przemysl + results[index].zatrudnieni_uslugi) * 100;
             let przemysl = results[index].zatrudnieni_przemysl / (results[index].zatrudnieni_rolnictwo + results[index].zatrudnieni_przemysl + results[index].zatrudnieni_uslugi) * 100;
             let wspMat = (results[index].liczba_ludnosci / results[index].liczba_ludnosci_stara) * (results[index].liczba_ludnosci / results[index].liczba_ludnosci_stara) * (results[index].srednia_pensja / results[index].srednia_pensja_stara) * (results[index].srednia_pensja / results[index].srednia_pensja_stara);
-            let wspTom = results[index].wynagrodzenie_w_relacji *(results[index].sredniaKrajowa / results[index].cenam2) * (results[index].ilosc_ofert_pracy / results[index].liczba_ludnosci * 100);
+            let wspTom = results[index].wynagrodzenie_w_relacji *(results[index].wynagrodzenie_brutto / results[index].cenam2) * Math.cbrt((results[index].ilosc_ofert_pracy / results[index].liczba_ludnosci * 100)) * (1/results[index].procent_bezrobocia);
 
             let dataObject = {
                 miasto: results[index].miasto,
