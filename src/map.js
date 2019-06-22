@@ -188,8 +188,10 @@ function animateValue(element, start, end) {
 function populateGrowthFactor(value){
   if(value > 1){
     growthFactor.innerHTML = 'Rosnący';
+    growthFactor.style.color = '#5dd95d';
   } else if(value < 1){
     growthFactor.innerHTML = 'Malejący';
+    growthFactor.style.color = '#ff0000';
   } else{
     growthFactor.innerHTML = 'Stały';
   }
