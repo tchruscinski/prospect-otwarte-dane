@@ -5,12 +5,12 @@ class cityData {
     }
 
     createSelectQueryAllCities() {
-        let sql = `SELECT nieruchomosci.miasto, AVG(wynagrodzenie.wynagrodzenie_brutto) AS sredniaKrajowa, AVG(nieruchomosci.cena) AS cenam2, SUM(bezrobotni.ilosc) AS bezrobotni, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja FROM bezrobotni INNER JOIN nieruchomosci ON bezrobotni.miasto = nieruchomosci.miasto INNER JOIN wynagrodzenie ON wynagrodzenie.miasto = bezrobotni.miasto INNER JOIN populacja ON populacja.miasto = bezrobotni.miasto GROUP BY populacja.liczba_ludnosci, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, nieruchomosci.miasto, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja`;
+        let sql = `SELECT nieruchomosci.miasto, AVG(wynagrodzenie.wynagrodzenie_brutto) AS sredniaKrajowa, AVG(nieruchomosci.cena) AS cenam2, SUM(bezrobotni.ilosc) AS bezrobotni, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja, dane.szkoly_podstawowe, dane.szkoly_srednie, dane.ludzie_na_apteke, dane.lekarze_na_10tys FROM bezrobotni INNER JOIN nieruchomosci ON bezrobotni.miasto = nieruchomosci.miasto INNER JOIN wynagrodzenie ON wynagrodzenie.miasto = bezrobotni.miasto INNER JOIN populacja ON populacja.miasto = bezrobotni.miasto INNER JOIN dane ON dane.miasto = bezrobotni.miasto GROUP BY populacja.liczba_ludnosci, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, nieruchomosci.miasto, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja, dane.szkoly_podstawowe, dane.szkoly_srednie, dane.ludzie_na_apteke, dane.lekarze_na_10tys`;
         return sql;
     }
 
     createSelectQuery() {
-        let sql = `SELECT AVG(nieruchomosci.cena) AS cenam2, AVG(wynagrodzenie.wynagrodzenie_brutto) AS sredniaKrajowa, SUM(bezrobotni.ilosc) AS bezrobotni, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja FROM bezrobotni INNER JOIN nieruchomosci ON bezrobotni.miasto = nieruchomosci.miasto INNER JOIN wynagrodzenie ON wynagrodzenie.miasto = bezrobotni.miasto INNER JOIN populacja ON populacja.miasto = bezrobotni.miasto WHERE bezrobotni.miasto = '${this.name}' GROUP BY populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja`;
+        let sql = `SELECT AVG(nieruchomosci.cena) AS cenam2, AVG(wynagrodzenie.wynagrodzenie_brutto) AS sredniaKrajowa, SUM(bezrobotni.ilosc) AS bezrobotni, wynagrodzenie.wynagrodzenie_brutto, wynagrodzenie.wynagrodzenie_w_relacji, populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja, dane.szkoly_podstawowe, dane.szkoly_srednie, dane.ludzie_na_apteke, dane.lekarze_na_10tys FROM bezrobotni INNER JOIN nieruchomosci ON bezrobotni.miasto = nieruchomosci.miasto INNER JOIN wynagrodzenie ON wynagrodzenie.miasto = bezrobotni.miasto INNER JOIN populacja ON populacja.miasto = bezrobotni.miasto INNER JOIN dane ON dane.miasto = bezrobotni.miasto WHERE bezrobotni.miasto = '${this.name}' GROUP BY populacja.liczba_ludnosci, populacja.procent_bezrobocia, populacja.ilosc_ofert_pracy, populacja.zatrudnieni_rolnictwo, populacja.zatrudnieni_uslugi, populacja.zatrudnieni_przemysl, populacja.liczba_ludnosci_stara, populacja.srednia_pensja_stara, populacja.srednia_pensja, dane.szkoly_podstawowe, dane.szkoly_srednie, dane.ludzie_na_apteke, dane.lekarze_na_10tys`;
         return sql;
     }
 
@@ -35,7 +35,12 @@ class cityData {
                 zatrudnieniPrzemysl: przemysl,
                 zatrudnieniUslugi: uslugi,
                 wspMatiego: wspMat,
-                wspTomka: wspTom
+                wspTomka: wspTom,
+                uczniowieNaJedenOddzialPodstawowka: results[index].szkoly_podstawowe,
+                uczniowieNaJedenOddzialSrednia: results[index].szkoly_srednie,
+                ludzieNaApteke: results[index].ludzie_na_apteke,
+                lekarzeNa10Tys: results[index].lekarze_na_10tys
+
             }
 
             this.dataArray.push(dataObject);
@@ -64,7 +69,11 @@ class cityData {
                 zatrudnieniPrzemysl: przemysl,
                 zatrudnieniUslugi: uslugi,
                 wspMatiego: wspMat,
-                wspTomka: wspTom
+                wspTomka: wspTom,
+                uczniowieNaJedenOddzialPodstawowka: results[index].szkoly_podstawowe,
+                uczniowieNaJedenOddzialSrednia: results[index].szkoly_srednie,
+                ludzieNaApteke: results[index].ludzie_na_apteke,
+                lekarzeNa10Tys: results[index].lekarze_na_10tys
             }
 
             this.dataArray.push(dataObject);
