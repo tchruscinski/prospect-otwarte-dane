@@ -156,7 +156,7 @@ function populateFieldsWithData(fetchedData){
   animateValue(unemploymentPercentage, 0, Math.round(fetchedData.data[0].stopaBezrobocia));
   animateValue(offersPerPerson, 0, Math.round(1000 * fetchedData.data[0].ofertyPracyNaMieszkanca));
   animateValue(averageSquarePrice, 0, Math.round(fetchedData.data[0].cenam2));
-  animateValue(growthFactor, 0, fetchedData.data[0].wspMatiego);
+  populateGrowthFactor(fetchedData.data[0].wspMatiego);
   animateValue(attractiveFactor, 0, Math.round(fetchedData.data[0].wspTomka));
   createPieChart(fetchedData);
 }
@@ -180,6 +180,19 @@ function animateValue(element, start, end) {
           return;
       }
     }, 10);
+}
+
+/**
+* Function populates growth factor field
+*/
+function populateGrowthFactor(value){
+  if(value > 1){
+    growthFactor.innerHTML = 'Rosnący';
+  } else if(value < 1){
+    growthFactor.innerHTML = 'Malejący';
+  } else{
+    growthFactor.innerHTML = 'Stały';
+  }
 }
 
 /**

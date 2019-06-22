@@ -365,15 +365,15 @@ body{
         }
 
         .triangle:hover{
-          background-color: $bg-color;
-          color: $font-color;
-          font-size: 18px;
-          font-weight: 800;
+        background-color: $bg-color;
+        color: $font-color;
+        font-size: 18px;
+        font-weight: 800;
           p{
             display: block;
             transform: translate(-10px, -30px);
             -webkit-transform: translate(-10px, -30px);
-            transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+            transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
           }
         }
       }
