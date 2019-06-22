@@ -57,7 +57,7 @@ function compareProperties(json){
                        2]);
 
       var options = {
-        title: "Średnie cena m2 mieszkania",
+        title: "Średnia cena m2 mieszkania",
         width: 600,
         height: 400,
         bar: {groupWidth: "95%"},

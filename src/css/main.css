@@ -617,6 +617,12 @@ body footer .triangle:hover p {
   body main span:nth-of-type(3) {
     order: 6;
   }
+  body main #piechart {
+    margin-left: -20vw !important;
+  }
+  body main .factors {
+    padding-left: 20vw !important;
+  }
   body footer .triangle {
     width: 60px;
     height: 59px;
