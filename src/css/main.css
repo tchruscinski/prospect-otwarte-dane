@@ -300,6 +300,19 @@ body main .comparison .properties-container {
   text-align: center;
   box-sizing: border-box;
 }
+body main .comparison .attractive-container {
+  order: 3;
+  width: 50%;
+  text-align: center;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+body main .comparison .growth-container {
+  order: 4;
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
 body footer {
   order: 3;
   width: 100%;
@@ -396,6 +409,14 @@ body footer .triangle:hover p {
     width: 100% !important;
     padding-left: 200px !important;
   }
+  body main .attractive-container {
+    width: 100% !important;
+    padding-left: 200px !important;
+  }
+  body main .growth-container {
+    width: 100% !important;
+    padding-left: 200px !important;
+  }
   body main .charts {
     flex-wrap: wrap;
   }
@@ -422,6 +443,12 @@ body footer .triangle:hover p {
     padding-left: 50px !important;
   }
   body main .properties-container {
+    padding-left: 50px !important;
+  }
+  body main .attractive-container {
+    padding-left: 50px !important;
+  }
+  body main .growth-container {
     padding-left: 50px !important;
   }
 }

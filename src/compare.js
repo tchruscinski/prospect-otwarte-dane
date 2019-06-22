@@ -68,6 +68,71 @@ function compareProperties(json){
   }
 }
 
+function compareAttractiveness(json){
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    let array = [];
+    array.push(["Element", "Atrakcyjność", { role: "style" } ]);
+    console.log(json);
+    for(let i = 0; i < json.data.length; i++){
+      array.push([json.data[i].miasto, json.data[i].wspTomka, "#"+((1<<24)*Math.random()|0).toString(16)]);
+    }
+    console.log(array);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable(array);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Współczynnik Atrakcyjności",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("compare-attractiveness"));
+      chart.draw(view, options);
+  }
+}
+
+function compareGrowth(json){
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    let array = [];
+    array.push(["Element", "Rozwój", { role: "style" } ]);
+    console.log(json);
+    for(let i = 0; i < json.data.length; i++){
+      array.push([json.data[i].miasto, json.data[i].wspMatiego, "#"+((1<<24)*Math.random()|0).toString(16)]);
+    }
+    console.log(array);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable(array);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Współczynnik Rozwoju",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("compare-growth"));
+      chart.draw(view, options);
+  }
+}
 
 /**
 * Function fetching all job offers from the db
@@ -80,5 +145,7 @@ function fetchData(){
     console.log(data);
     compareSalaries(myJson);
     compareProperties(myJson);
+    compareAttractiveness(myJson);
+    compareGrowth(myJson);
   });
 }
